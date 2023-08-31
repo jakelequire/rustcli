@@ -12,9 +12,8 @@ fn main() {
     let cli = Cli::parse();
 
     match &cli.command {
-        Commands::Add(name) => {
-            println!("'myapp add' was used, name is: {:?}", name.name)
-        }
+        Commands::Qkdir(args) => commands::qkdir::execute(args),
+        Commands::Build(args) => commands::build::execute(args)
     }
 
 }
