@@ -13,7 +13,6 @@ fn main() {
 
     match &cli.command {
         Commands::Qkdir(args) => commands::qkdir::execute(args),
-        Commands::Build(args) => commands::build::execute(args)
     }
 
 }

@@ -11,8 +11,6 @@ pub struct Cli {
 
 #[derive(Subcommand)]
 pub enum Commands {
-    #[command(name = "build")]
-    Build(BuildArgs),
     #[command(name = "qkdir")]
     Qkdir(QkdirArgs),
 }
@@ -25,6 +23,3 @@ pub struct QkdirArgs {
     pub path: Option<String>,
 }
 
-
-#[derive(Args, Debug)]
-pub struct BuildArgs {}
