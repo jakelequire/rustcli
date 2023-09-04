@@ -1,4 +1,7 @@
-use clap::{Args, Parser, Subcommand};
+use clap::{Parser, Subcommand};
+
+use crate::commands::qkdir::args::QkdirArgs;
+
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
@@ -13,13 +16,5 @@ pub struct Cli {
 pub enum Commands {
     #[command(name = "qkdir")]
     Qkdir(QkdirArgs),
-}
-
-#[derive(Args, Debug)]
-pub struct QkdirArgs {
-    #[arg(required = false)]
-    pub name: String,
-    #[arg(required = false)]
-    pub path: Option<String>,
 }
 

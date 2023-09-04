@@ -1,18 +1,20 @@
 use clap::Parser;
-use types::Cli;
-use types::Commands;
+use libs::Cli;
+use libs::Commands;
+
+use commands::qkdir::qkdir;
 
 mod commands;
 mod utils;
-mod types;
+mod libs;
 
 
 
 fn main() {
-    let cli = Cli::parse();
+    let cli: Cli = Cli::parse();
 
     match &cli.command {
-        Commands::Qkdir(args) => commands::qkdir::execute(args),
+        Commands::Qkdir(args) => qkdir::execute(args),
     }
-
+    
 }
