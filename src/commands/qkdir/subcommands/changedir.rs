@@ -18,7 +18,7 @@ struct Directories {
 }
 
 pub fn execute (name: &str) -> Result<()> {
-    let mut script_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    let mut script_path: PathBuf = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
     script_path.push("sh");
     script_path.push("qkdir.bat");
 
@@ -51,9 +51,14 @@ pub fn execute (name: &str) -> Result<()> {
 
             println!("DEBUG SCRIPT {}", path.display());
             // Run the script
-            Command::new(script_path)
-                .spawn()
-                .expect("Failed to execute process");
+            Command::new("cmd")
+                .arg("/c")
+                .arg("start")
+                .arg("cmd")
+                .arg("/k")
+                .arg(format!("cd {}", path.display()))
+                .spawn()?;
+        
 
             // Set the current directory for the process
             if let Err(e) = env::set_current_dir(&path) {
