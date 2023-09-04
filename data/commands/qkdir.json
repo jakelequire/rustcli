@@ -3,6 +3,10 @@
     {
       "name": "testing2",
       "path": "C:/Programming/lib"
+    },
+    {
+      "name": "programming",
+      "path": "C:/Programming"
     }
   ]
 }

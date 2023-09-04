@@ -24,7 +24,6 @@ pub fn execute() -> Result<()> {
 
     let mut file = OpenOptions::new()
         .read(true)
-        .write(true)
         .open(&file_path)?;
 
     let mut contents: String = String::new();

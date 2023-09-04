@@ -1,10 +1,10 @@
 use clap::{Args, Subcommand};
 
-
 #[derive(Args, Debug)]
 pub struct QkdirArgs {
     #[command(subcommand)]
-    pub command: QkdirSubCommands,
+    pub command: Option<QkdirSubCommands>,
+    pub name: Option<String>,
 }
 
 #[derive(Subcommand, Debug)]
@@ -20,7 +20,7 @@ pub enum QkdirSubCommands {
     #[command(name = "-r")]
     #[command(about = "Remove a directory from the list \n Usage: qkdir -r <name> \n")]
     Remove(RemoveArgs),
-    
+
     // ... other subcommands
 }
 
