@@ -7,6 +7,10 @@
     {
       "name": "programming",
       "path": "C:/Programming"
+    },
+    {
+      "name": "myworkspace",
+      "path": "C:/Programming/apps/my-workspace"
     }
   ]
 }
