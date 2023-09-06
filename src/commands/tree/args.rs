@@ -17,7 +17,6 @@ pub enum TreeSubCommands {
     // ... other subcommands
 }
 
-
 #[derive(Args, Debug)]
 pub struct BlacklistArgs {
     pub name: String,

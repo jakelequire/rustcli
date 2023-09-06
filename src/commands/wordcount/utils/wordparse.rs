@@ -3,13 +3,13 @@ use std::fs::File;
 use std::error::Error;
 
 pub fn execute(file: &str) -> Result<(), Box<dyn Error>> {
-    let mut file = File::open(&file)?;
-    let mut contents = String::new();
+    let mut file: File = File::open(&file)?;
+    let mut contents: String = String::new();
     file.read_to_string(&mut contents)?;
 
-    let mut word_count = 0;
-    let mut line_count = 0;
-    let mut char_count = 0;
+    let mut word_count: i32 = 0;
+    let mut line_count: i32 = 0;
+    let mut char_count: i32 = 0;
 
     for line in contents.lines() {
         line_count += 1;

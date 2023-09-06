@@ -1,6 +1,6 @@
 use clap::{Parser, Subcommand};
 
-use crate::commands::qkdir::args::QkdirArgs;
+use crate::commands::{qkdir::args::QkdirArgs, tree::args::TreeArgs};
 
 
 #[derive(Parser)]
@@ -16,5 +16,6 @@ pub struct Cli {
 pub enum Commands {
     #[command(name = "qkdir")]
     Qkdir(QkdirArgs),
+    Tree(TreeArgs)
 }
 
