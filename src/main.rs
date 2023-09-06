@@ -14,7 +14,6 @@ fn main() {
     let cli: Cli = Cli::parse();
 
     match &cli.command {
-        Commands::Qkdir(args) => qkdir::execute(args),
+        Commands::Qkdir(args) => qkdir::execute(args).unwrap(),
     }
-    
 }

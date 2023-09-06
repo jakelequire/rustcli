@@ -1,4 +1,4 @@
-use std::io::{Result, Error};
+use std::io::Result;
 use crate::commands::qkdir::args::QkdirArgs;
 use crate::commands::qkdir::args::QkdirSubCommands;
 
@@ -7,9 +7,7 @@ use crate::commands::qkdir::subcommands::list::execute as list_execute;
 use crate::commands::qkdir::subcommands::remove::execute as remove_execute;
 use crate::commands::qkdir::subcommands::changedir::execute as changedir_execute;
 
-
 use colored::*;
-
 /// 
 /// Execute the qkdir command
 /// 
@@ -30,7 +28,7 @@ use colored::*;
 /// execute(&args);
 /// ```
 /// 
-pub fn execute(args: &QkdirArgs) {
+pub fn execute(args: &QkdirArgs) -> Result<()> {
     // If the command is not None, then a subcommand was passed
     if let Some(command) = &args.command {
         match command {
@@ -69,4 +67,5 @@ pub fn execute(args: &QkdirArgs) {
         });
     }
 
+    Ok(())
 }
