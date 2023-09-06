@@ -7,7 +7,7 @@ use commands::qkdir::qkdir;
 mod commands;
 mod utils;
 mod libs;
-
+mod macros;
 
 
 fn main() {
