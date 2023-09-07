@@ -1,0 +1,14 @@
+{
+  "blacklist": [
+    {
+      "directory": [
+        "/testing/c",
+        "/testing/",
+        "/testing/ts",
+        "/testing/mjs",
+        "/testing/jsx",
+        "/testing/tsx"
+      ]
+    }
+  ]
+}

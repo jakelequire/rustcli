@@ -4,7 +4,7 @@ use clap::{Args, Subcommand};
 pub struct TreeArgs {
     #[command(subcommand)]
     pub command: Option<TreeSubCommands>,
-    pub tree: Option<bool>,
+    pub name: Option<String>,
 }
 
 #[derive(Subcommand, Debug)]
@@ -19,5 +19,10 @@ pub enum TreeSubCommands {
 
 #[derive(Args, Debug)]
 pub struct BlacklistArgs {
-    pub name: String,
+    #[arg(short, long)]
+    #[arg(required = false)]
+    pub remove: Option<String>,
+    #[arg(short, long)]
+    #[arg(required = false)]
+    pub list: bool,
 }
